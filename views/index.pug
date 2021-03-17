@@ -1,0 +1,31 @@
+extends layout
+
+block content
+
+  div.all-books
+    h1 Books
+    div 
+      a.button(href="/books/new") Create New Book
+    br
+    br
+    table
+      thead
+        tr
+          th.title Title
+          th.author Author
+          th.genre Genre
+          th.year Year
+      tbody
+        each book in books
+          book
+            tr
+              td
+                a(href=`/books/${book.id}`) #{book.title}
+              td #{book.author}
+              td #{book.genre}
+              td #{book.year}
+    br
+    div.pagebtnsdiv
+      - for(let i = 0; i < totalPages; i++) {
+          a.button(href=`/books?term=${term}&page=${i}`)= i+1
+      - }
