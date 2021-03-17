@@ -1,5 +1,4 @@
 extends layout
-
 block content
 
   div.all-books
@@ -24,8 +23,3 @@ block content
               td #{book.author}
               td #{book.genre}
               td #{book.year}
-    br
-    div.pagebtnsdiv
-      - for(let i = 0; i < totalPages; i++) {
-          a.button(href=`/books?term=${term}&page=${i}`)= i+1
-      - }

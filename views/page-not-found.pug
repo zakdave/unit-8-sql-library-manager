@@ -1,0 +1,9 @@
+extends layout
+block content
+
+  h1 Not found!
+  p #{err.message}
+  p Status: #{err.status}
+
+  p
+    a.button(href='/books') Home 
